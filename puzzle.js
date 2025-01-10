@@ -144,7 +144,7 @@ res.send(`
     </body>
   </html>
 `);
-//--- Explicación: 
+//--- Explicación: este sería lo que va a aparecer en la raíz (/) para que nos permita introducir la palabra en el input.
 
 
 // -------------------------------------------------------------------------------------
@@ -171,14 +171,14 @@ app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
     </form>
   `);
 });
-//--- Explicación: 
+//--- Explicación: será lo que aparezca en la ruta destino (/profile) si superamos la condición del middleware de validarPalabra
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//--- Explicación: 
+//--- Explicación: parsear las url para su correcto uso
 
 // -------------------------------------------------------------------------------------
 
@@ -189,7 +189,7 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-//--- Explicación: 
+//--- Explicación: mantenmos la sesión
 
 // -------------------------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ app.use(session({
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en http://localhost:${PORT}`);
 });
-//--- Explicación: 
+//--- Explicación: escuchamos el puerto para que funcione la aplicación
 
 // -------------------------------------------------------------------------------------
 
@@ -209,7 +209,7 @@ const verificarSesionMiddleware = (req, res, next) => {
     res.redirect('/?error=2');
   }
 };
-//--- Explicación: 
+//--- Explicación: en caso que tengamos ya la sesión garantizada, pasa al siguiente sin verificar la palabra
 
 // -------------------------------------------------------------------------------------
 
@@ -223,7 +223,7 @@ app.get('/profile', middlewares.verificarSesionMiddleware, (req, res) => {
     </form>
   `);
 });
-//--- Explicación: 
+//--- Explicación: será lo que aparezca en la ruta destino (/profile) si ya teníamos la sesión iniciada
 
 // -------------------------------------------------------------------------------------
 
@@ -237,7 +237,7 @@ app.post('/logout', (req, res) => {
     res.redirect('/');
   });
 });
-//--- Explicación: 
+//--- Explicación: tumba la sesión que teníamos guardada
 
 // -------------------------------------------------------------------------------------
 
