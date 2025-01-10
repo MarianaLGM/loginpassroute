@@ -2,19 +2,19 @@
 
 //Usado?: YES
   const middlewares = require('./middlewares');
-//--- Explicación: 
+//--- Explicación: requerimos ruta './middlewares'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const bodyParser = require('body-parser');
-//--- Explicación:
+//--- Explicación:requerimos'body-parser'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const session = require('express-session');
-//--- Explicación:
+//--- Explicación: requerimos 'express-session'
 
 // -------------------------------------------------------------------------------------
 
@@ -26,37 +26,37 @@ const express = require('express');
 
 //Usado?: YES
 const bodyParser = require('body-parser');
-//--- Explicación:
+//--- Explicación:requerimos'body-parser'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const session = require('express-session');
-//--- Explicación:
+//--- Explicación:requerimos 'express-session'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const dotenv = require('dotenv');
-//--- Explicación:
+//--- Explicación: requerimos'dotenv'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const middlewares = require('./middlewares');
-//--- Explicación:
+//--- Explicación: requerimos ruta ('./middlewares')
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const routes = require('./routes');
-//--- Explicación:
+//--- Explicación: requerimos ruta ('./routes')
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 dotenv.config();
-//--- Explicación:
+//--- Explicación: para poder usar el .env que tiene la información
 
 // -------------------------------------------------------------------------------------
 
@@ -68,32 +68,31 @@ const app = express();
 
 //Usado?: YES
 const PORT = 4000;
-//--- Explicación:
+//--- Explicación: variable que contiene el puerto 
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 const dotenv = require('dotenv');
-//--- Explicación:
+//--- Explicación: requerimos 'dotenv'
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 dotenv.config();
-//--- Explicación:
+//--- Explicación:para poder usar el .env que tiene la información
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 middlewares.setupApp(app);
-//--- Explicación: 
+//--- Explicación:  llamar a la funcion setupApp(app);
 
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
 routes.setup(app);
-//--- Explicación: 
-
+//--- Explicación: llamar a la funcion setup(app)
 // -------------------------------------------------------------------------------------
 
 //Usado?: YES
@@ -107,7 +106,8 @@ const validarPalabraMiddleware = (req, res, next) => {
     res.redirect('/?error=1');
   }
 };
-//--- Explicación: 
+/*--- Explicación: Este middleware, como su nombre indica, lo que hace es validar la palabra secreta, si es correcta inicia 
+sesión y sino redirige/muestra error1*/ 
 
 
 // -------------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ const setup = (app) => {
     }
   //Aquí va código dentro
 })}
-//--- Explicación: 
+//--- Explicación: esta es la función para meter todas las rutas y luego usarlas en app
 
 
 // -------------------------------------------------------------------------------------
@@ -245,7 +245,7 @@ app.post('/logout', (req, res) => {
 module.exports = {
   setup,
 };
-//--- Explicación:
+//--- Explicación:exportamos funciones
 
 // -------------------------------------------------------------------------------------
 
@@ -255,7 +255,7 @@ module.exports = {
   verificarSesionMiddleware,
   setupAPP,
 };
-//--- Explicación:
+//--- Explicación: exportamos funciones
 
 // -------------------------------------------------------------------------------------
 
